@@ -1,6 +1,6 @@
-<h1>Listing livros</h1>
+<h1>Livros</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Autor</th>
@@ -22,8 +22,14 @@
         <td><%= livro.editora %></td>
         <td><%= livro.edicao %></td>
         <td><%= livro.dono %></td>
-        <td><%= livro.emprestado %></td>
+        
+         <% if livro.emprestado ==false %> 
+            <td> <span class= "glyphicon glyphicon-remove"> </span></td> 
+        <td> <span> -- </span></td>
+        <% else %>
+           <td> <span class= "glyphicon glyphicon-ok"> </span></td> 
         <td><%= livro.pessoa.nome %></td>
+        <% end %>
         <td><%= link_to 'Exibir', livro %></td>
         <td><%= link_to 'Editar', edit_livro_path(livro) %></td>
         <td><%= link_to 'Apagar', livro, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
@@ -33,5 +39,7 @@
 </table>
 
 <br>
-
-<%= link_to 'Novo Livro', new_livro_path %>
+<div class="pull-right">
+<%= link_to 'Novo Livro', new_livro_path, :class => "btn btn-primary" %>
+<%= link_to 'Novo Amigo', new_pessoa_path, :class => "btn btn-primary" %>
+</div>
