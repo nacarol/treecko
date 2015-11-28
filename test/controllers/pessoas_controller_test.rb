@@ -18,7 +18,7 @@ class PessoasControllerTest < ActionController::TestCase
 
   test "should create pessoa" do
     assert_difference('Pessoa.count') do
-      post :create, pessoa: { e-mail: @pessoa.e-mail, nome: @pessoa.nome, telefone: @pessoa.telefone }
+      post :create, pessoa: { email: @pessoa.email, nome: @pessoa.nome, telefone: @pessoa.telefone }
     end
 
     assert_redirected_to pessoa_path(assigns(:pessoa))
@@ -35,7 +35,7 @@ class PessoasControllerTest < ActionController::TestCase
   end
 
   test "should update pessoa" do
-    patch :update, id: @pessoa, pessoa: { e-mail: @pessoa.e-mail, nome: @pessoa.nome, telefone: @pessoa.telefone }
+    patch :update, id: @pessoa, pessoa: { email: @pessoa.email, nome: @pessoa.nome, telefone: @pessoa.telefone }
     assert_redirected_to pessoa_path(assigns(:pessoa))
   end
 
