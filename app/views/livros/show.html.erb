@@ -25,5 +25,15 @@
   <%= @livro.dono %>
 </p>
 
-<%= link_to 'Edit', edit_livro_path(@livro) %> |
-<%= link_to 'Back', livros_path %>
+<p>
+  <strong>Está emprestado?</strong>
+  <%= @livro.emprestado %>
+</p>
+
+<p>
+  <strong>Para quem?</strong>
+  <%= @livro.pessoa.nome %>
+</p>
+
+<%= link_to 'Editar', edit_livro_path(@livro) %> |
+<%= link_to 'Voltar', livros_path %>
