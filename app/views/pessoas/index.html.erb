@@ -1,6 +1,6 @@
-<h1>Listing pessoas</h1>
+<h1>Amigos</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Nome</th>
@@ -16,14 +16,17 @@
         <td><%= pessoa.nome %></td>
         <td><%= pessoa.email %></td>
         <td><%= pessoa.telefone %></td>
-        <td><%= link_to 'Show', pessoa %></td>
-        <td><%= link_to 'Edit', edit_pessoa_path(pessoa) %></td>
-        <td><%= link_to 'Destroy', pessoa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Exibir', pessoa %></td>
+        <td><%= link_to 'Editar', edit_pessoa_path(pessoa) %></td>
+        <td><%= link_to 'Apagar', pessoa, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<div class="pull-right">
+<%= link_to 'Novo Amigo', new_pessoa_path, :class => "btn btn-primary" %>
+<%= link_to 'Catálogo', livros_path, :class => "btn btn-primary" %>
 
-<%= link_to 'New Pessoa', new_pessoa_path %>
+</div>

@@ -40,6 +40,6 @@
     <%= f.select('pessoa_id', Pessoa.all.collect {|p| [p.nome, p.id]}, {include_blank:true}) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salvar", :class => "btn btn-primary"%>
   </div>
 <% end %>

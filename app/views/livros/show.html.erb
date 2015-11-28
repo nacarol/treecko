@@ -30,10 +30,14 @@
   <%= @livro.emprestado %>
 </p>
 
+<% if @livro.emprestado %>
+
 <p>
   <strong>Para quem?</strong>
   <%= @livro.pessoa.nome %>
 </p>
+
+<% end %>
 
 <%= link_to 'Editar', edit_livro_path(@livro) %> |
 <%= link_to 'Voltar', livros_path %>
