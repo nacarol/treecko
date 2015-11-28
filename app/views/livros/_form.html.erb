@@ -31,6 +31,14 @@
     <%= f.label :dono %><br>
     <%= f.text_field :dono %>
   </div>
+  <div class="field">
+    <%= f.label :emprestado %><br>
+    <%= f.check_box :emprestado %>
+  </div>
+  <div class="field">
+    <%= f.label :pessoa %><br>
+    <%= f.select('pessoa_id', Pessoa.all.collect {|p| [p.nome, p.id]}, {include_blank:true}) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

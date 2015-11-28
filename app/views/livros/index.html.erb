@@ -8,6 +8,8 @@
       <th>Editora</th>
       <th>Edicao</th>
       <th>Dono</th>
+      <th>Está emprestado?</th>
+      <th>Para quem?</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,9 +22,11 @@
         <td><%= livro.editora %></td>
         <td><%= livro.edicao %></td>
         <td><%= livro.dono %></td>
-        <td><%= link_to 'Show', livro %></td>
-        <td><%= link_to 'Edit', edit_livro_path(livro) %></td>
-        <td><%= link_to 'Destroy', livro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= livro.emprestado %></td>
+        <td><%= livro.pessoa.nome %></td>
+        <td><%= link_to 'Exibir', livro %></td>
+        <td><%= link_to 'Editar', edit_livro_path(livro) %></td>
+        <td><%= link_to 'Apagar', livro, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Livro', new_livro_path %>
+<%= link_to 'Novo Livro', new_livro_path %>
